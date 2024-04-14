@@ -1,1 +1,5 @@
-.\idea
+ # PyCharm project files
+\.idea
+
+# Generated ROM images
+*.bin
