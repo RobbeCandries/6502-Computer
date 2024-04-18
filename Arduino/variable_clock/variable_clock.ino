@@ -8,7 +8,7 @@
 
 #define clockPin 13
 #define togglePin 9
-int delayValue = 100;
+int delayValue = 20;
 
 void setup() {
   Serial.begin(9600);
