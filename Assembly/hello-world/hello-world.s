@@ -1,3 +1,5 @@
+; A program that writes a hello world message to the LCD screen
+
 PORTB = $6000
 PORTA = $6001
 DDRB = $6002
