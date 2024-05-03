@@ -1,3 +1,5 @@
+; A program that writes a message to the LCD screen using subroutines
+
 PORTB = $6000
 PORTA = $6001
 DDRB = $6002
