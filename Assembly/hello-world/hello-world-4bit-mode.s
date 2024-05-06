@@ -22,14 +22,14 @@ reset:
   sta DDRA
 
   jsr lcd_init
-  lda #%00101000 ; Set 4-bit mode; 2-line display; 5x8 font
-  jsr lcd_instruction
-  lda #%00001110 ; Display on; cursor on; blink off
-  jsr lcd_instruction
-  lda #%00000110 ; Increment and shift cursor; don't shift display
-  jsr lcd_instruction
-  lda #%00000001 ; Clear display
-  jsr lcd_instruction
+  ;lda #%00101000 ; Set 4-bit mode; 2-line display; 5x8 font
+  ;jsr lcd_instruction
+  ;lda #%00001110 ; Display on; cursor on; blink off
+  ;jsr lcd_instruction
+  ;lda #%00000110 ; Increment and shift cursor; don't shift display
+  ;jsr lcd_instruction
+  ;lda #%00000001 ; Clear display
+  ;jsr lcd_instruction
 
   ldx #0
 print:
@@ -75,11 +75,16 @@ lcdbusy:
 
 lcd_init:
   lda #%00000010 ; Set 4-bit mode
-  sta PORTB
-  ora #E
-  sta PORTB
-  and #%00001111
-  sta PORTB
+  jsr lcd_instruction
+
+  lda #%00101000 ; Set 4-bit mode; 2-line display; 5x8 font
+  jsr lcd_instruction
+  lda #%00001110 ; Display on; cursor on; blink off
+  jsr lcd_instruction
+  lda #%00000110 ; Increment and shift cursor; don't shift display
+  jsr lcd_instruction
+  lda #%00000001 ; Clear display
+  jsr lcd_instruction
   rts
 
 lcd_instruction:
