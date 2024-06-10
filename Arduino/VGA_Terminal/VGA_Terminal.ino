@@ -80,7 +80,7 @@ void setup() {
   // Start VGA on the specified pins
   vga.init(vga.MODE400x300, redPin, greenPin, bluePin, hsyncPin, vsyncPin);
 
-  // Make the background blue
+  // Make the background black
   vga.clear(vga.RGBA(0, 0, 0));
   vga.backColor = vga.RGB(0, 0, 0);
 
