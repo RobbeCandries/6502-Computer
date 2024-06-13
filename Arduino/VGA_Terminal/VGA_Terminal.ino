@@ -40,13 +40,12 @@ void handleVGA(void *parameter) {
       // Read the incoming byte
       char incomingByte = Serial2.read();
 
-      // Check if the incoming byte is a newline character
-      if (incomingByte == '\r') {
-        // If Enter key is pressed, print a message
-        vga.println();
-      } else {
+      if (incomingByte == '\r') 
+        // Go to new line
+        vga.print('\r');
+      else
+        // Print recieved character to screen
         vga.print(incomingByte);
-      }
     }
     delay(1); // Add a small delay to prevent watchdog timeout
   }
@@ -61,7 +60,8 @@ void handlePS2Keyboard(void *parameter) {
       char c = keyboard.read();
 
       if (c == PS2_ENTER) {
-        Serial2.println();
+        Serial2.print('\r');
+        // Serial2.println();
       } else if (c == PS2_TAB) {
         Serial2.print("\t");
       } else if (c != 0) {
@@ -74,7 +74,7 @@ void handlePS2Keyboard(void *parameter) {
 }
 
 void setup() {
-  // Init serial
+  // Init communication serial
   Serial2.begin(19200);
 
   // Start VGA on the specified pins
