@@ -1,5 +1,9 @@
- # PyCharm project files
+# PyCharm project files
 \.idea
 
 # Generated ROM images
 *.bin
+*.out
+
+# Generated object files
+*.o
