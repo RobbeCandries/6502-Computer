@@ -27,7 +27,7 @@ if not (rom11Path.strip() == '' or os.path.isfile(rom11Path)):
 
 
 # check if output path is given
-if outputPath.strip() != '':
+if outputPath.strip() == '':
     raise Exception('The output file path cannot be empty')
 
 
