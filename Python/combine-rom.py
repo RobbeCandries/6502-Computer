@@ -54,7 +54,7 @@ else:
 if rom01Path.strip() != '':
     with open(rom01Path, 'rb') as rom01File:
         rom01Image = list(rom01File.read())
-    if len(rom00Image) != 0x8000:
+    if len(rom01Image) != 0x8000:
         raise Exception('Size of rom image 01 is incorrect Must be 0x8000 bytes long')
 else:
     rom01Image = [0xff] * 0x8000
@@ -62,7 +62,7 @@ else:
 if rom10Path.strip() != '':
     with open(rom10Path, 'rb') as rom10File:
         rom10Image = list(rom10File.read())
-    if len(rom00Image) != 0x8000:
+    if len(rom10Image) != 0x8000:
         raise Exception('Size of rom image 10 is incorrect Must be 0x8000 bytes long')
 else:
     rom10Image = [0xff] * 0x8000
@@ -70,7 +70,7 @@ else:
 if rom11Path.strip() != '':
     with open(rom11Path, 'rb') as rom11File:
         rom11Image = list(rom11File.read())
-    if len(rom00Image) != 0x8000:
+    if len(rom11Image) != 0x8000:
         raise Exception('Size of rom image 11 is incorrect. Must be 0x8000 bytes long')
 else:
     rom11Image = [0xff] * 0x8000
